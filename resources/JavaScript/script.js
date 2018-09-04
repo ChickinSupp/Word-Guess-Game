@@ -12,21 +12,25 @@ let underscore = [];
 // Create underscores based on length of words
 let generateUnderscore = () => {
     for (let i = 0; i < chosenWord.length; i++) {
-        underscore.push(' _ ')
+        underscore.push(' _ ')      
     }
     return underscore;
 }
+console.log(generateUnderscore());
 
 
 // Get users guess
 document.addEventListener('keypress', (event) => {
     let keyword = String.fromCharCode(event.keyCode);
 
-    if(chosenWord.indexOf(keyword) > -1) {
-         
-
+    if(chosenWord.indexOf(keyword) > -1) { 
+        console.log(true);
+         rightWord.push(keyword);
+         console.log(keyword);
+    } else {
+        wrongWord.push(keyword);
+        console.log(wrongWord);
     }
-
 });
 
 
