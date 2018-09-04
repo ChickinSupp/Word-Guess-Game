@@ -2,10 +2,12 @@
 const words = ['Baker', 'Real', 'Alien Workshop', 'Independent', 'Plan B', 'Element', 'Toy Machine', 'Almost', 'Enjoi'];
 
 // Choose words randomly
-let ranWord = Math.floor(Math.random() * words.length);
-let chosenWord = words[ranWord];
+let randWord = Math.floor(Math.random() * words.length);
+let chosenWord = words[randWord];
+let rightWord = [];
+let wrongWord = [];
 let underscore = [];
-console.log(chosenWord);
+
 
 // Create underscores based on length of words
 let generateUnderscore = () => {
@@ -15,13 +17,15 @@ let generateUnderscore = () => {
     return underscore;
 }
 
-console.log(generateUnderscore());
 
 // Get users guess
 document.addEventListener('keypress', (event) => {
     let keyword = String.fromCharCode(event.keyCode);
 
-    if(chosenWord)
+    if(chosenWord.indexOf(keyword) > -1) {
+         
+
+    }
 
 });
 
