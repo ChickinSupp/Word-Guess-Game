@@ -1,25 +1,120 @@
 // Creating Array of words
-const words = ['Baker', 'Real', 'Alien Workshop', 'Independent', 'Plan B', 'Element', 'Toy Machine', 'Almost', 'Enjoi'];
+const words = [
+  "Baker",
+  "Real",
+  "Alien Workshop",
+  "Independent",
+  "Plan B",
+  "Element",
+  "Toy Machine",
+  "Almost",
+  "Enjoi"
+];
+
+let randomWord, 
+chosenWord, 
+rightWord, 
+wrongWord, 
+underscore;
 
 // Choose words randomly
-let ranWord = Math.floor(Math.random() * words.length);
-let choosenWord = words[ranWord];
-let underScores = [];
-console.log(choosenWord);
+randomWord = Math.floor(Math.random() * words.length);
 
+chosenWord = words[randomWord];
+rightWord = [];
+wrongWord = [];
+underscore = [];
+
+var str;
 // Create underscores based on length of words
-let generateUnderscore = () => {
-    for (let i = 0; i < choosenWord.length; i++) {
-        underScores.push(' _ ')
-    }
-    return underScores;
-}
+let generateUnderscore = function() {
+  for (let i = 0; i < chosenWord.length; i++) {
+    underscore.push('_');   
+  }
+  return underscore;
+};
 
-console.log(generateUnderscore());
+document.querySelector('#underscore').textContent = generateUnderscore();
 
-// Get users guess
 
+// addEventListener('keypress' (event) = function() {
+//     right = String.fromCharCode(event.keycode).toLowerCase();
+// });
+
+// Get user guess
 
 // Check if guess is right
-// iF right push to correct array
-// If wrong push to wrong array 
+    
+// If right push to correct array
+       
+// replace underscore with right letter
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let docUnderscore = document.getElementById("underscore");
+// let docRightGuess = document.getElementById("rightGuess");
+// let docWrongGuess = document.getElementById("wrongGuess");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
