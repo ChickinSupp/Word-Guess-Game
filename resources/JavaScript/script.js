@@ -1,4 +1,3 @@
-// Creating Array of words
 const words = [
   "Baker",
   "Real",
@@ -14,38 +13,56 @@ const words = [
 let randomWord, 
 chosenWord, 
 rightWord, 
-wrongWord, 
-underscore;
+wrongLetter, 
+underscore, 
+letterGuess;
+
+let rightPush = false;
 
 // Choose words randomly
 randomWord = Math.floor(Math.random() * words.length);
 
-chosenWord = words[randomWord];
-rightWord = [];
-wrongWord = [];
-underscore = [];
 
+chosenWord = words[randomWord];
+chosenWord = chosenWord.toLowerCase();
+console.log(chosenWord);
+rightWord = [];
+wrongLetter = [];
+underscore = [];
 var str;
+
 // Create underscores based on length of words
 let generateUnderscore = function() {
   for (let i = 0; i < chosenWord.length; i++) {
-    underscore.push('_');   
+    underscore.push("_");
   }
-  return underscore;
+  str = underscore.join(" ");
+  return str;
 };
 
-document.querySelector('#underscore').textContent = generateUnderscore();
+document.querySelector("#underscore").textContent = generateUnderscore();
 
+var letterChecker = function(guess) {
+  for (let x = 0; x < chosenWord.length; x++) {
+    if (guess === chosenWord[x]) {
+      rightWord.push(guess);
+      console.log(rightWord);
+      rightPush = true;
+    }
+  }
+  if (!rightPush) {
+    wrongLetter.push(guess);
+    console.log("wrong " + wrongLetter);
+  }
+};
 
-// addEventListener('keypress' (event) = function() {
-//     right = String.fromCharCode(event.keycode).toLowerCase();
-// });
-
+document.onkeyup = function(event) {
+  letterGuess = event.key;
+  letterChecker(letterGuess);
+};
 // Get user guess
-
 // Check if guess is right
-    
+
 // If right push to correct array
-       
+
 // replace underscore with right letter
-       
